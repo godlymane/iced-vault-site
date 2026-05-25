@@ -2042,6 +2042,7 @@ img {
 .drawer-panel,
 .product-modal,
 .certificate-card {
+  --panel-glass-filter: blur(40px) saturate(120%);
   background-color: rgba(5, 6, 8, 0.72);
   background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.012) 100%);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -2050,8 +2051,8 @@ img {
   box-shadow:
     0 30px 60px rgba(0, 0, 0, 0.6),
     inset 0 1px 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(40px) saturate(120%);
-  -webkit-backdrop-filter: blur(40px) saturate(120%);
+  -webkit-backdrop-filter: var(--panel-glass-filter);
+  backdrop-filter: var(--panel-glass-filter);
 }
 
 @media (max-width: 1080px) {
@@ -2337,6 +2338,7 @@ img {
   .drawer-panel,
   .product-modal,
   .certificate-card {
+    --panel-glass-filter: blur(24px) saturate(108%);
     background-color: rgba(5, 6, 8, 0.9);
     background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.018) 100%);
     border-top-color: rgba(255, 255, 255, 0.18);
@@ -2344,8 +2346,8 @@ img {
     box-shadow:
       0 22px 48px rgba(0, 0, 0, 0.68),
       inset 0 1px 1px rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(24px) saturate(108%);
-    -webkit-backdrop-filter: blur(24px) saturate(108%);
+    -webkit-backdrop-filter: var(--panel-glass-filter);
+    backdrop-filter: var(--panel-glass-filter);
   }
 
   .spec-grid,
