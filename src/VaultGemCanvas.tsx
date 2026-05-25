@@ -30,14 +30,14 @@ function VaultGemCanvas() {
     const gem = new THREE.Mesh(
       new THREE.OctahedronGeometry(1.32, 1),
       new THREE.MeshPhysicalMaterial({
-        color: 0xd8f7ff,
-        emissive: 0x103746,
-        metalness: 0.08,
-        roughness: 0.12,
-        transmission: 0.38,
-        thickness: 0.6,
+        color: 0xffffff,
+        emissive: 0x000000,
+        metalness: 0.1,
+        roughness: 0.0,
+        transmission: 1.0,
+        thickness: 1.5,
+        ior: 2.65,
         transparent: true,
-        opacity: 0.9,
       }),
     )
     group.add(gem)
