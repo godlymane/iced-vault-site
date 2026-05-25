@@ -2042,7 +2042,8 @@ img {
 .drawer-panel,
 .product-modal,
 .certificate-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.005) 100%);
+  background-color: rgba(5, 6, 8, 0.72);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.012) 100%);
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
@@ -2198,19 +2199,19 @@ img {
   }
 
   body {
-    padding-bottom: 70px;
+    padding-bottom: 62px;
   }
 
   .site-header {
     min-height: 66px;
-    padding-inline: 12px;
+    padding-inline: 10px;
   }
 
   .brand-mark,
   .icon-button,
   .cart-button {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 
   .brand-lockup {
@@ -2225,25 +2226,35 @@ img {
     display: none;
   }
 
+  .concierge-trigger {
+    display: none;
+  }
+
   .cart-button {
-    min-width: 56px;
+    min-width: 52px;
+    padding: 0 9px;
   }
 
   .hero {
-    min-height: 90svh;
+    display: block;
+    min-height: calc(100svh - 66px);
+    padding: 112px 0 92px;
   }
 
   .hero-content {
-    margin-bottom: 252px;
+    width: calc(100% - 32px);
+    margin: 0 auto;
   }
 
   .eyebrow {
     max-width: 100%;
-    font-size: 10px;
+    padding: 7px 9px;
+    font-size: 9px;
+    line-height: 1.2;
   }
 
   .hero h1 {
-    font-size: 46px;
+    font-size: 54px;
   }
 
   .unlock-panel {
@@ -2260,23 +2271,30 @@ img {
 
   .hero-actions {
     display: grid;
+    gap: 10px;
+    margin-top: 24px;
   }
 
-  .hero-vault-card {
-    bottom: 82px;
+  .hero-gem-stage {
+    right: -140px;
+    top: 96px;
+    width: 360px;
+    height: 320px;
+    opacity: 0.28;
   }
 
-  .vault-card-body h2 {
-    font-size: 24px;
+  .hero-image {
+    filter: saturate(0.68) contrast(1.08) brightness(0.7);
   }
 
+  .hero-vault-card,
   .hero-proof {
-    bottom: 14px;
+    display: none;
   }
 
-  .hero-proof span {
-    min-height: 32px;
-    font-size: 11px;
+  .ticker {
+    padding: 12px 16px;
+    font-size: 10px;
   }
 
   .drop-section,
@@ -2291,7 +2309,7 @@ img {
 
   .drop-section,
   .shop-section {
-    padding-top: 54px;
+    padding-top: 42px;
   }
 
   .section-heading h2,
@@ -2310,6 +2328,24 @@ img {
 
   .drop-details {
     padding: 18px;
+  }
+
+  .product-card,
+  .drop-visual,
+  .drop-details,
+  .vault-panel,
+  .drawer-panel,
+  .product-modal,
+  .certificate-card {
+    background-color: rgba(5, 6, 8, 0.9);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.018) 100%);
+    border-top-color: rgba(255, 255, 255, 0.18);
+    border-left-color: rgba(255, 255, 255, 0.11);
+    box-shadow:
+      0 22px 48px rgba(0, 0, 0, 0.68),
+      inset 0 1px 1px rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px) saturate(108%);
+    -webkit-backdrop-filter: blur(24px) saturate(108%);
   }
 
   .spec-grid,
@@ -2345,22 +2381,64 @@ img {
     flex-direction: column;
   }
 
+  .shop-controls {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
   .segmented {
     border-radius: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 4px;
+    scrollbar-width: none;
+  }
+
+  .segmented::-webkit-scrollbar {
+    display: none;
   }
 
   .segmented button {
-    flex: 1 1 42%;
+    flex: 0 0 auto;
     min-width: 0;
+    min-height: 34px;
+    padding: 0 12px;
     border-radius: 2px;
   }
 
+  .search-field {
+    min-height: 42px;
+  }
+
   .product-media {
-    height: 320px;
+    height: 248px;
   }
 
   .product-body {
     min-height: 0;
+    padding: 16px;
+  }
+
+  .product-description {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .product-meta {
+    display: none;
+  }
+
+  .certificate-link {
+    min-height: 32px;
+    margin-bottom: 14px;
+  }
+
+  .product-footer {
+    gap: 10px;
+  }
+
+  .product-footer strong {
+    font-size: 23px;
   }
 
   .quick-view {
@@ -2383,24 +2461,27 @@ img {
 
   .mobile-quick-bar {
     position: fixed;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    left: 12px;
+    right: 12px;
+    bottom: 8px;
     z-index: 60;
     display: grid;
     grid-template-columns: 18px 1fr auto;
     align-items: center;
-    min-height: 52px;
+    min-height: 46px;
     gap: 10px;
-    padding: 0 14px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 0 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 2px;
-    background: rgba(5, 8, 11, 0.86);
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.015)),
+      rgba(5, 6, 8, 0.94);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.58);
     color: var(--platinum);
     font-weight: 900;
     text-decoration: none;
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(24px) saturate(110%);
+    -webkit-backdrop-filter: blur(24px) saturate(110%);
   }
 
   .mobile-quick-bar span {
